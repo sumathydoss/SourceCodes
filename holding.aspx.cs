@@ -109,18 +109,13 @@ public partial class holding : System.Web.UI.Page
 
             using (WebResponse response = ex.Response)
             {
-
-
                 string ErrorString = "Error from the Server:-----<br><br>";
-                HttpWebResponse httpResponse = (HttpWebResponse)response;                   
                 using (Stream data1 = response.GetResponseStream())
                 using (var reader = new StreamReader(data1))
                 {
                     ErrorString += reader.ReadToEnd();
                     Response.Write(ErrorString);
                 }
-
-                
             }
         }
     }
